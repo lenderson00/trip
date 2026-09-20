@@ -1,0 +1,69 @@
+/*
+ * Tokens do design system "Papel".
+ * ESTE E O UNICO ARQUIVO COM VALOR DE COR E FAMILIA TIPOGRAFICA.
+ * Extraido do moodboard: zine de viagem recortada, papel amassado, colagem.
+ */
+
+:root {
+  /* --- Papel (substrato) --- */
+  --paper-cream: #fbf2e7;
+  --paper-white: #f7f4ef;
+  --paper-kraft: #e8d9c3;
+  --paper-news: #ece5d8;
+  --paper-edge: #ffffff;
+
+  /* --- Tinta (texto) --- */
+  --ink: #2b2622;
+  --ink-soft: #6b6159;
+  --ink-faint: #a2988d;
+
+  /* --- Acentos --- */
+  --sage: #8fb393;
+  --forest: #2f6b52;
+  --blush: #f2c6c0;
+  --poppy: #e03e4e;
+  --terracotta: #c96a58;
+  --caramel: #a67c52;
+  --mustard: #e9b44c;
+  --dusk: #5b6e8c;
+
+  /* --- Sombras de papel: curtas, quentes, nunca pretas --- */
+  --shadow-lift:
+    0 1px 2px rgb(43 38 34 / 0.08), 0 4px 10px rgb(43 38 34 / 0.06);
+  --shadow-cut: 0 2px 4px rgb(43 38 34 / 0.12), 0 8px 18px rgb(43 38 34 / 0.09);
+  --shadow-stick: 0 10px 24px rgb(43 38 34 / 0.14);
+
+  /* --- Curvas --- */
+  --ease-paper: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-snip: cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@theme inline {
+  --color-paper-cream: var(--paper-cream);
+  --color-paper-white: var(--paper-white);
+  --color-paper-kraft: var(--paper-kraft);
+  --color-paper-news: var(--paper-news);
+  --color-paper-edge: var(--paper-edge);
+
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-ink-faint: var(--ink-faint);
+
+  --color-sage: var(--sage);
+  --color-forest: var(--forest);
+  --color-blush: var(--blush);
+  --color-poppy: var(--poppy);
+  --color-terracotta: var(--terracotta);
+  --color-caramel: var(--caramel);
+  --color-mustard: var(--mustard);
+  --color-dusk: var(--dusk);
+
+  --font-display: var(--font-fraunces), Georgia, serif;
+  --font-chunky: var(--font-fredoka), system-ui, sans-serif;
+  --font-hand: var(--font-caveat), cursive;
+  --font-body: var(--font-dm-sans), system-ui, sans-serif;
+
+  --shadow-lift: var(--shadow-lift);
+  --shadow-cut: var(--shadow-cut);
+  --shadow-stick: var(--shadow-stick);
+}
