@@ -41,9 +41,10 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="pt-BR"
+      suppressHydrationWarning
       className={`${fraunces.variable} ${fredoka.variable} ${caveat.variable} ${dmSans.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-paper-cream text-ink">
+      <body className="flex min-h-full flex-col items-center bg-paper-cream text-ink">
         {children}
       </body>
     </html>

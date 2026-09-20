@@ -99,6 +99,8 @@ export type LightLeakProps = {
   grain?: number;
   seed?: number | string;
   className?: string;
+  /** Canvas atras do conteudo (texto). Em fotos, deixe false. */
+  behind?: boolean;
 };
 
 /**
@@ -119,6 +121,7 @@ export function LightLeak({
   grain = 0.05,
   seed,
   className,
+  behind = true,
 }: LightLeakProps) {
   const { enabled } = useCanvasFx();
   const seedValue = useMemo(() => (toSeed(seed, 3) % 91) / 6, [seed]);
@@ -137,7 +140,12 @@ export function LightLeak({
   const gl = useGlEffect(SPEC, options, enabled);
 
   return (
-    <GlSurface gl={gl} blend="screen" className={cn("relative", className)}>
+    <GlSurface
+      gl={gl}
+      blend="screen"
+      behind={behind}
+      className={cn("relative", className)}
+    >
       {children}
     </GlSurface>
   );

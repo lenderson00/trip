@@ -17,14 +17,14 @@ export function Secao({
 }) {
   return (
     <section id={id} className={cn("scroll-mt-24", className)}>
-      <header className="mb-7">
+      <header className="mb-7 text-center">
         {kicker ? (
           <p className="font-hand text-2xl text-caramel">{kicker}</p>
         ) : null}
         <h2 className="font-display text-4xl leading-tight text-ink">
           {titulo}
         </h2>
-        <PerforatedDivider className="mt-4 max-w-sm" scissors={false} />
+        <PerforatedDivider className="mx-auto mt-4 max-w-sm" scissors={false} />
       </header>
       {children}
     </section>

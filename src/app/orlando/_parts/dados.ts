@@ -2,21 +2,26 @@ import type { ItineraryDay } from "@/components/paper/itinerary-thread";
 import type { PackingItem } from "@/components/paper/packing-checklist";
 
 /**
- * Dados da viagem, separados do layout.
- *
- * Esta pagina e uma demonstracao do sistema de papel com conteudo realista --
- * os numeros e horarios sao inventados. Quando virar produto, isto aqui vira
- * a resposta da API e nenhuma das pecas visuais precisa mudar.
+ * Dados da viagem Orlando outubro 2026.
+ * O roteiro dia a dia vive em MDX em src/content/orlando/dias.
  */
 
 export const VIAGEM = {
   destino: "Orlando",
   pais: "Estados Unidos",
-  entrada: "05 de fevereiro de 2027",
-  saida: "14 de fevereiro de 2027",
-  noites: 9,
-  viajantes: "2 adultos + 1 crianca (9 anos)",
-  hospedagem: "Resort na International Drive",
+  entrada: "07 de outubro de 2026",
+  saida: "15 de outubro de 2026",
+  voltaBrasil: "16 de outubro de 2026",
+  noites: 8,
+  viajantes: "familia",
+  hospedagem: "Casa da amiga",
+} as const;
+
+/** Embarque GRU — contagem regressiva do caderno. */
+export const PARTIDA = {
+  iso: "2026-10-07T06:05:00-03:00",
+  label: "07OUT · 06h05",
+  chegaOrlando: "16h30",
 } as const;
 
 export type Voo = {
@@ -37,8 +42,8 @@ export const VOO_IDA: Voo = {
   para: "MCO",
   cidadeDe: "Sao Paulo",
   cidadePara: "Orlando",
-  data: "05 fev",
-  hora: "22h15",
+  data: "07 out",
+  hora: "06h05 → 16h30",
   duracao: "8h20 · direto",
   assentos: "24A 24B 24C",
 };
@@ -49,8 +54,8 @@ export const VOO_VOLTA: Voo = {
   para: "GRU",
   cidadeDe: "Orlando",
   cidadePara: "Sao Paulo",
-  data: "14 fev",
-  hora: "21h40",
+  data: "15–16 out",
+  hora: "22h00 → 10h40",
   duracao: "8h55 · direto",
   assentos: "31D 31E 31F",
 };
@@ -207,23 +212,23 @@ export const BAGAGEM: PackingItem[] = [
 export const ORCAMENTO = [
   {
     label: "passagens",
-    amount: "R$ 9.800",
+    amount: "R$ 2.200",
     spent: 1,
     color: "var(--paper-kraft)",
   },
-  { label: "hospedagem", amount: "R$ 7.200", spent: 1, color: "var(--blush)" },
-  { label: "ingressos", amount: "R$ 12.400", spent: 0.7, color: "var(--sage)" },
+  { label: "hospedagem", amount: "Free", spent: 1, color: "var(--blush)" },
+  { label: "ingressos", amount: "R$ 7.500", spent: 0.85, color: "var(--sage)" },
   {
     label: "comida",
-    amount: "R$ 5.000",
-    spent: 0.15,
+    amount: "~US$ 400",
+    spent: 0.1,
     color: "var(--paper-kraft)",
   },
-  { label: "compras", amount: "R$ 6.000", spent: 0, color: "var(--mustard)" },
+  { label: "compras", amount: "US$ 2.000", spent: 0, color: "var(--mustard)" },
   {
     label: "transporte",
-    amount: "R$ 1.800",
-    spent: 0.4,
+    amount: "pontos do cartão",
+    spent: 1,
     color: "var(--blush)",
   },
 ] as const;
@@ -233,7 +238,92 @@ export const PINS = [
   { x: 56, y: 52, label: "EPCOT", color: "var(--forest)" },
   { x: 24, y: 66, label: "Animal Kingdom", color: "var(--forest)" },
   { x: 74, y: 30, label: "Universal", color: "var(--dusk)" },
-  { x: 62, y: 76, label: "resort", color: "var(--terracotta)" },
+  { x: 62, y: 76, label: "casa", color: "var(--terracotta)" },
+];
+
+export const MAP_PINS: {
+  position: [number, number];
+  label: string;
+  color: string;
+  days?: string[];
+}[] = [
+  {
+    position: [28.4312, -81.3081],
+    label: "MCO",
+    color: "var(--dusk)",
+    days: ["2026-10-07", "2026-10-15"],
+  },
+  {
+    position: [28.522, -81.165],
+    label: "casa",
+    color: "var(--terracotta)",
+  },
+  {
+    position: [28.569, -81.208],
+    label: "Walmart",
+    color: "var(--caramel)",
+    days: ["2026-10-07"],
+  },
+  {
+    position: [28.4427, -81.4503],
+    label: "Epic Universe",
+    color: "var(--poppy)",
+    days: ["2026-10-08"],
+  },
+  {
+    position: [28.4743, -81.4678],
+    label: "Universal",
+    color: "var(--dusk)",
+    days: ["2026-10-09"],
+  },
+  {
+    position: [28.4439, -81.47],
+    label: "ICON Park",
+    color: "var(--mustard)",
+    days: ["2026-10-10"],
+  },
+  {
+    position: [28.5437, -81.3729],
+    label: "Lake Eola",
+    color: "var(--forest)",
+    days: ["2026-10-10"],
+  },
+  {
+    position: [28.4847, -81.4314],
+    label: "Millenia",
+    color: "var(--mustard)",
+    days: ["2026-10-11"],
+  },
+  {
+    position: [28.4505, -81.3954],
+    label: "Best Buy",
+    color: "var(--dusk)",
+    days: ["2026-10-11"],
+  },
+  {
+    position: [28.4736, -81.4514],
+    label: "Int’l Outlets",
+    color: "var(--caramel)",
+    days: ["2026-10-11"],
+  },
+  {
+    position: [28.5729, -80.649],
+    label: "Kennedy Space Center",
+    color: "var(--sage)",
+    days: ["2026-10-13"],
+  },
+  {
+    position: [28.4177, -81.5812],
+    label: "Magic Kingdom",
+    color: "var(--poppy)",
+    days: ["2026-10-14"],
+  },
+  {
+    position: [28.3702, -81.5193],
+    label: "Disney Springs",
+    color: "var(--blush)",
+    days: ["2026-10-08", "2026-10-13", "2026-10-15"],
+  },
 ];
 
 export const DICAS = [
@@ -250,6 +340,11 @@ export const DICAS = [
   {
     titulo: "Um dia sem parque nenhum",
     texto:
-      "Dez dias seguidos de parque acaba com qualquer um, ainda mais com crianca. O dia de piscina no meio e o que faz a segunda metade da viagem valer.",
+      "Oito noites com parque todo dia acaba com qualquer um. O domingo de compras e o dia da Erica sao o oxigenio da segunda metade.",
+  },
+  {
+    titulo: "Comida de fora no parque? Quase nao",
+    texto:
+      "So agua ate 2L, dieta medica e cooler macio pequeno. Cafe forte em casa antes de sair — no parque tudo vira US$ 15 sem perceber.",
   },
 ];

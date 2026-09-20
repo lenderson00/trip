@@ -160,6 +160,7 @@ export function PaperScraps({
   return (
     <GlSurface
       gl={gl}
+      behind
       className={cn("relative", className)}
       bleed={{ top: 40, bottom: 40 }}
     >

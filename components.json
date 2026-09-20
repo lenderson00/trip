@@ -19,6 +19,7 @@
   },
   "iconLibrary": "lucide",
   "registries": {
-    "@canvas-ui": "https://canvasui.dev/r/{name}.json"
+    "@canvas-ui": "https://canvasui.dev/r/{name}.json",
+    "@shadcn-map": "http://shadcn-map.vercel.app/r/{name}.json"
   }
 }

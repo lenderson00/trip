@@ -144,7 +144,7 @@ export function DustMotes({
   const gl = useGlEffect(SPEC, options, enabled);
 
   return (
-    <GlSurface gl={gl} blend="screen" className={cn("relative", className)}>
+    <GlSurface gl={gl} blend="screen" behind className={cn("relative", className)}>
       {children}
     </GlSurface>
   );

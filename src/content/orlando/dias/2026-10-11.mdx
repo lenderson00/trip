@@ -1,0 +1,62 @@
+<Nota>
+Domingo de compras. Rota travada: clearance Millenia → Best Buy (se der) → Int’l Premium Outlets → casa. Sem NEX, sem Disney. Saída **10h20–10h40**.
+</Nota>
+
+<Alerta>Chick-fil-A do Millenia fecha domingo. Comer QS no entorno do Marshalls ou food court dos outlets.</Alerta>
+
+## Sequência do dia
+
+<Passo n="1" title="Casa — café e lista">
+  <Horario time="9h30–10h20" title="Café + lanches + lista">
+    Meta sair entre 10h20 e 10h40. Dinheiro livre em roupa/marca; comida barata (casa / Walmart / QS ≤ US$ 15).
+  </Horario>
+</Passo>
+
+<Passo n="2" title="Trajeto Casa → Millenia">
+  <Trajeto de="casa" para="Nordstrom Rack Millenia" tempo="~33 min / 23,7 mi · FL-408 W (pedágio)">
+    1ª porta às **11h**. Margem se o trânsito apertar.
+  </Trajeto>
+</Passo>
+
+<Passo n="3" title="Clearance Millenia — Rack + Marshalls">
+  <Horario time="11h00–12h45" title="Nordstrom Rack">
+    MUST Laís — roupas. Clearance antes de outlet.
+  </Horario>
+  <Trajeto de="Nordstrom Rack" para="Marshalls" tempo="~8 min / 1,0 mi" />
+  <Horario time="12h55–14h00" title="Marshalls + lanche QS">
+    Tip. 9h30–21h30 (confirmar). Sem Chick-fil-A.
+  </Horario>
+</Passo>
+
+<Passo n="4" title="Trajeto Millenia → Best Buy">
+  <Trajeto de="Millenia" para="Best Buy Florida Mall" tempo="~18 min / 5,5 mi">
+    Cut trigger: se atrasarem, pular Best Buy → Millenia–Outlets (~11 min / 2,7 mi).
+  </Trajeto>
+</Passo>
+
+<Passo n="5" title="Best Buy — Florida Mall">
+  <Horario time="14h20–15h15" title="Tech leve (opcional)">
+    Opcional Lenderson. Não estourar o tempo — outlets fecham 19h.
+  </Horario>
+</Passo>
+
+<Passo n="6" title="Trajeto Best Buy → Outlets">
+  <Trajeto de="Best Buy" para="Int’l Premium Outlets" tempo="~18 min / 5,3 mi · Oak Ridge Rd" />
+</Passo>
+
+<Passo n="7" title="Int’l Premium Outlets">
+  <Horario time="15h35–18h40" title="Must de marca">
+    Horário domingo **11h–19h**. Sair do estacionamento ~18h40.
+  </Horario>
+  <Lista items={["NB Factory #113 — 574 / Fresh Foam / 880 / 1080", "Kipling #170", "VS Outlet #174"]} />
+</Passo>
+
+<Passo n="8" title="Trajeto Outlets → Casa">
+  <Trajeto de="Int’l Premium Outlets" para="casa" tempo="~32 min / 24,7 mi · FL-408 E (pedágio)">
+    Carro até **18h45** mesmo incompleto.
+  </Trajeto>
+</Passo>
+
+## Gatilhos de corte
+
+<Lista items={["Drop Best Buy (última prioridade)", "Drop Marshalls depois do Rack", "No outlet: manter NB + Kipling + VS; cortar o resto", "Érica encaixa se combinar — não trava a rota"]} />

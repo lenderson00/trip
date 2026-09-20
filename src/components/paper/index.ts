@@ -21,6 +21,10 @@ export { FoldedMap, type FoldedMapProps, type MapPin } from "./folded-map";
 export { Highlighter, type HighlighterProps } from "./highlighter";
 export { InkSplatter, type InkSplatterProps } from "./ink-splatter";
 export {
+  ItineraryCalendar,
+  type CalendarDay,
+} from "./itinerary-calendar";
+export {
   type ItineraryDay,
   type ItineraryEntry,
   ItineraryThread,
@@ -60,6 +64,7 @@ export { Sticker, type StickerProps } from "./sticker";
 export { TicketStub, type TicketStubProps } from "./ticket-stub";
 export { TornCircle, type TornCircleProps } from "./torn-circle";
 export { TornEdge, type TornEdgeProps, type TornSide } from "./torn-edge";
+export { PaperPin, TripMap, type TripPin } from "./trip-map";
 export {
   WashiTape,
   type WashiTapeProps,
